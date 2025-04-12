@@ -7,6 +7,7 @@ const Footer = () => {
     <div className="bg-[#223645] text-white">
       <div className="max-w-7xl mx-auto">
         {/* navbar logo with email send and satisfied client section */}
+
         <div className="flex-row md:flex space-y-6 md:space-y-0 justify-between items-center py-10">
           {/* logo */}
           <img className="h-20 mx-auto md:mx-0" src={logo} alt="logo" />
@@ -30,9 +31,43 @@ const Footer = () => {
             Satisfied Clients
           </h3>
         </div>
+
         {/* border */}
         <div className="border-b-1 border-[#7c8085] "></div>
+
         {/* navbar menu with recent and contact us items */}
+        <footer className="footer sm:footer-horizontal p-10">
+          <aside>
+            <h6 className="footer-title">About Us</h6>
+            <p>
+              Lorem ipsum dolor sit amet, culpa
+              <br /> consectetadipisicing elit.
+              <br /> numquam iste aliquam
+            </p>
+          </aside>
+          <nav>
+            <h6 className="footer-title">Quick Links</h6>
+            <a className="link link-hover">Branding</a>
+            <a className="link link-hover">Design</a>
+            <a className="link link-hover">Marketing</a>
+            <a className="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title">Recent Posts</h6>
+            <a className="link link-hover">About us</a>
+            <a className="link link-hover">Contact</a>
+            <a className="link link-hover">Jobs</a>
+            <a className="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title">Contact Us</h6>
+            <a className="link link-hover">Terms of use</a>
+            <a className="link link-hover">Privacy policy</a>
+            <a className="link link-hover">Cookie policy</a>
+          </nav>
+        </footer>
+        {/* border */}
+        <div className="border-b-1 border-[#7c8085] "></div>
       </div>
     </div>
   );
