@@ -40,9 +40,9 @@ const Footer = () => {
           <aside>
             <h6 className="footer-title">About Us</h6>
             <p>
-              Lorem ipsum dolor sit amet, culpa
-              <br /> consectetadipisicing elit.
-              <br /> numquam iste aliquam
+              Lorem ipsum dolor sit amet, culpa adipis
+              <br /> consecte tadipis icing adipis elit.
+              <br /> numquam iste adipis aliquam
             </p>
           </aside>
           <nav>
@@ -68,6 +68,15 @@ const Footer = () => {
         </footer>
         {/* border */}
         <div className="border-b-1 border-[#7c8085] "></div>
+        {/* copyright section */}
+        <footer className="footer sm:footer-horizontal footer-center p-4">
+          <aside>
+            <p>
+              Copyright © {new Date().getFullYear()} - All right reserved by
+              Poor Doct
+            </p>
+          </aside>
+        </footer>
       </div>
     </div>
   );
