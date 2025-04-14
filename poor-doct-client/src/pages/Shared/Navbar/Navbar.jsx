@@ -166,7 +166,7 @@ const Navbar = () => {
             <label className="toggle text-base-content">
               <input
                 type="checkbox"
-                value="dark"
+                value="sunset"
                 className="theme-controller"
                 checked={isdark === true ? false : true}
                 onChange={() => setIsdark(!isdark)}
