@@ -30,7 +30,9 @@ const AboutSection = () => {
           illum nemo tempore sapiente consectetur sed delectus nam.
         </p>
         <div className="flex gap-6 items-center">
-          <button className="btn bg-[#e12454] text-white">Click Here</button>
+          <button className="btn bg-[#e12454] text-white p-6">
+            Click Here
+          </button>
 
           <p className="flex items-center gap-1 text-xl">
             <BiPhoneCall className="text-4xl text-[#e12454]" />

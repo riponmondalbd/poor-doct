@@ -34,7 +34,7 @@ const Banner = () => {
               <p className="animate__animated animate__fadeInUp">
                 We've 20 Years of experience in Medical Services
               </p>
-              <button className="btn bg-[#e12454] text-white btn-secondary animate__animated animate__fadeInUp">
+              <button className="btn p-6 bg-[#e12454] text-white btn-secondary animate__animated animate__fadeInUp">
                 Our Services
               </button>
             </div>
@@ -59,7 +59,7 @@ const Banner = () => {
               <p className="animate__animated animate__fadeInUp">
                 We've 20 Years of experience in Medical Services
               </p>
-              <button className="btn bg-[#e12454] text-white animate__animated animate__fadeInUp">
+              <button className="btn p-6 bg-[#e12454] text-white animate__animated animate__fadeInUp">
                 Our Services
               </button>
             </div>
