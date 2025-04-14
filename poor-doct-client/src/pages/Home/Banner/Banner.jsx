@@ -20,7 +20,7 @@ const Banner = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Navigation]}
-        className="mySwiper bg-[#dfe9ed]"
+        className="mySwiper bg-base-300"
       >
         <SwiperSlide>
           <div className="flex items-center justify-between max-w-7xl mx-auto px-2">

@@ -4,7 +4,7 @@ import logo from "../../../assets/white-logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[#223645] text-white">
+    <div className="bg-[#223645]">
       <div className="max-w-7xl mx-auto">
         {/* navbar logo with email send and satisfied client section */}
 
@@ -13,20 +13,21 @@ const Footer = () => {
           <img className="h-20 mx-auto md:mx-0" src={logo} alt="logo" />
           {/* subscribe by email */}
           <div className="flex justify-center md:justify-start items-center gap-3">
-            <h3 className="font-bold">Subscribe:</h3>
+            <h3 className="font-bold  text-white">Subscribe:</h3>
             <div className="join">
               <input
                 type="text"
                 placeholder="Enter Your Email"
-                className="input input-bordered join-item text-black"
+                className="input input-bordered join-item"
               />
+
               <button className="btn bg-[#04c065] border-[#04c065] shadow join-item">
                 <FaTelegramPlane className="text-xl" />
               </button>
             </div>
           </div>
           {/* satisfied clients */}
-          <h3 className="flex items-center justify-center md:justify-start">
+          <h3 className="flex items-center justify-center md:justify-start  text-white">
             <span className="text-[#04c065] text-4xl font-medium">5M+ </span>
             Satisfied Clients
           </h3>
@@ -36,7 +37,7 @@ const Footer = () => {
         <div className="border-b-1 border-[#7c8085] "></div>
 
         {/* navbar menu with recent and contact us items */}
-        <footer className="footer sm:footer-horizontal p-10">
+        <footer className="footer sm:footer-horizontal p-10  text-white">
           <aside>
             <h6 className="footer-title">About Us</h6>
             <p>
@@ -71,7 +72,7 @@ const Footer = () => {
         {/* copyright section */}
         <footer className="footer sm:footer-horizontal footer-center p-4">
           <aside>
-            <p>
+            <p className=" text-white">
               Copyright © {new Date().getFullYear()} - All right reserved by
               Poor Doct
             </p>

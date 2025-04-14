@@ -10,7 +10,7 @@ import linImg from "../../../assets/line.png";
 
 const ManageHealthCare = () => {
   return (
-    <div className="bg-[#dfe9ed]">
+    <div className="bg-base-300">
       <div className="max-w-7xl mx-auto px-2">
         {/* section of manage and heath service heading and appointment */}
         <div className="grid lg:grid-cols-2 items-center gap-8">
