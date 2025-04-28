@@ -7,12 +7,12 @@ import { Link, NavLink } from "react-router";
 import logo from "../../../assets/logo.png";
 
 const Navbar = () => {
-  const [isdark, setIsdark] = useState(
-    JSON.parse(localStorage.getItem("isdark"))
+  const [isDark, setIsDark] = useState(
+    JSON.parse(localStorage.getItem("isDark"))
   );
   useEffect(() => {
-    localStorage.setItem("isdark", JSON.stringify(isdark));
-  }, [isdark]);
+    localStorage.setItem("isDark", JSON.stringify(isDark));
+  }, [isDark]);
 
   const [isSticky, setIsSticky] = useState(false);
 
@@ -168,8 +168,8 @@ const Navbar = () => {
                 type="checkbox"
                 value="sunset"
                 className="theme-controller"
-                checked={isdark === true ? false : true}
-                onChange={() => setIsdark(!isdark)}
+                checked={isDark === true ? false : true}
+                onChange={() => setIsDark(!isDark)}
               />
 
               <svg
