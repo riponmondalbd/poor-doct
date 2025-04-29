@@ -45,7 +45,6 @@ const Doctors = () => {
             },
           }}
           rewind={true}
-          loop={true}
           navigation={true}
           autoplay={{
             delay: 4000,

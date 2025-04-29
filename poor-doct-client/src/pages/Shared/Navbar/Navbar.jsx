@@ -165,9 +165,7 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
-          <div className="navbar-end">
-            <button className="btn bg-[#e12454] text-white">Contact Us</button>
-
+          <div className="navbar-end gap-2">
             {/* make dark mode or theme changer darka and white */}
             <label className="toggle text-base-content">
               <input
@@ -219,6 +217,7 @@ const Navbar = () => {
                 </g>
               </svg>
             </label>
+            <button className="btn bg-[#e12454] text-white">Contact Us</button>
           </div>
         </div>
       </div>
