@@ -21,13 +21,13 @@ const Challenge = () => {
           {/* challenge right side component*/}
           <div className="flex-1">
             <div className="flex gap-20">
-              <h3 className="text-[#04c065] text-4xl font-medium">1M+</h3>
+              <h3 className="text-[#04c065] text-5xl font-semibold">1M+</h3>
               <div>
-                <h3 className="flex text-xl items-center text-white">
+                <h3 className="flex text-xl font-semibold items-center mb-2 text-white">
                   <BsPersonFill />
                   Satisfied Clients
                 </h3>
-                <p>
+                <p className="text-[#899dab] text-[15px]">
                   Lorem ipsum dolor sit amet, <br />
                   consectetur adipisicing elit. Vel <br />
                   exercitationem temporibus fugiat vo <br /> accusantium
@@ -36,13 +36,13 @@ const Challenge = () => {
               </div>
             </div>
             <div className="flex gap-16 mt-10">
-              <h3 className="text-[#04c065] text-4xl font-medium">100+</h3>
+              <h3 className="text-[#04c065] text-5xl font-semibold">100+</h3>
               <div>
-                <h3 className="flex text-xl items-center text-white">
+                <h3 className="flex text-xl font-semibold items-center mb-2 text-white">
                   <BsPersonFill />
                   World Awards
                 </h3>
-                <p>
+                <p className="text-[#899dab] text-[15px]">
                   Lorem ipsum dolor sit amet, <br />
                   consectetur adipisicing elit. Vel <br />
                   exercitationem temporibus fugiat vo <br /> accusantium
