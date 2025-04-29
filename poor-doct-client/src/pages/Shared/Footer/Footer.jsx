@@ -22,7 +22,7 @@ const Footer = () => {
               />
 
               <button className="btn bg-[#04c065] border-[#04c065] shadow join-item">
-                <FaTelegramPlane className="text-xl" />
+                <FaTelegramPlane className="text-xl text-black" />
               </button>
             </div>
           </div>
