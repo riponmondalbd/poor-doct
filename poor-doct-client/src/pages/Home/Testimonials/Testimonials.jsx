@@ -1,3 +1,4 @@
+import { Rating } from "@smastrom/react-rating";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
@@ -7,6 +8,8 @@ import { Autoplay, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+
+import "@smastrom/react-rating/style.css";
 
 const Testimonials = () => {
   const axiosPublic = useAxiosPublic();
@@ -51,6 +54,11 @@ const Testimonials = () => {
                   />
                 </figure>
                 <div className="card-body items-center text-center">
+                  <Rating
+                    style={{ maxWidth: 100 }}
+                    value={testimonial.rating}
+                    readOnly
+                  />
                   <p className="lg:w-2/3">{testimonial.testimonial}</p>
                   <BiSolidQuoteAltLeft className="text-5xl text-[#04c065]" />
                   <h2 className="card-title">{testimonial.name}</h2>

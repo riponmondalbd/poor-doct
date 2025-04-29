@@ -41,9 +41,9 @@ const Footer = () => {
           <aside>
             <h6 className="footer-title">About Us</h6>
             <p>
-              Lorem ipsum dolor sit amet, culpa adipis
-              <br /> consecte tadipis icing adipis elit.
-              <br /> numquam iste adipis aliquam
+              Poordoct offers affordable, accessible <br /> healthcare services,
+              focusing on underserved <br /> communities with compassionate
+              treatment <br /> and essential medical support.
             </p>
           </aside>
           <nav>
