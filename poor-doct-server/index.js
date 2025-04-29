@@ -26,11 +26,21 @@ async function run() {
     await client.connect();
 
     const doctorCollection = client.db("PoorDoctDB").collection("doctors");
+    const testimonialsCollection = client
+      .db("PoorDoctDB")
+      .collection("testimonials");
 
     // doctors api's collection
     // get all doctors
     app.get("/doctors", async (req, res) => {
       const result = await doctorCollection.find().toArray();
+      res.send(result);
+    });
+
+    // testimonials api's collection
+    // get all testimonials
+    app.get("/testimonials", async (req, res) => {
+      const result = await testimonialsCollection.find().toArray();
       res.send(result);
     });
 
