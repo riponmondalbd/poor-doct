@@ -36,7 +36,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/"}
-          className={({ isActive }) => (isActive ? "text-[#e12454]" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
         >
           Home
         </NavLink>
@@ -44,7 +46,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/about"}
-          className={({ isActive }) => (isActive ? "text-[#e12454]" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
         >
           About
         </NavLink>
@@ -52,7 +56,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/contact"}
-          className={({ isActive }) => (isActive ? "text-[#e12454]" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
         >
           Contact
         </NavLink>
