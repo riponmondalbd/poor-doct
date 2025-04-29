@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="bg-[#223645]">
       <div className="max-w-7xl mx-auto">
-        {/* navbar logo with email send and satisfied client section */}
+        {/* navbar logo with Subscription and satisfied client section */}
 
         <div className="flex-row md:flex space-y-6 md:space-y-0 justify-between items-center py-10">
           {/* logo */}

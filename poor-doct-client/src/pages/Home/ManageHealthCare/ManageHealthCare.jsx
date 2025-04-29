@@ -20,7 +20,7 @@ const ManageHealthCare = () => {
               Manage PoorDoct
             </h4>
             <h2 className="text-5xl font-bold my-7">
-              Managed Your Heathcare Services
+              Managed Your Heath Care Services
             </h2>
             <img src={linImg} alt="line" />
           </div>
