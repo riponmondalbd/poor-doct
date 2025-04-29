@@ -1,8 +1,12 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+
+import "swiper/css";
+import { Keyboard } from "swiper/modules";
 
 const Testimonials = () => {
   return (
@@ -13,22 +17,14 @@ const Testimonials = () => {
       />
       <div>
         <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 2,
-              spaceBetween: 50,
-            },
+          rewind={true}
+          mousewheel={true}
+          keyboard={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
           }}
+          modules={[Autoplay, Keyboard]}
           className="mySwiper"
         >
           <SwiperSlide>Slide 1</SwiperSlide>
