@@ -19,15 +19,15 @@ const AboutSection = () => {
       <div className="py-24 flex-1 space-y-7">
         <h4 className="text-[#e12454] text-xl font-medium">About PoorDoct</h4>
         <h2 className="text-5xl font-bold my-7">
-          Read Something About Doctio Health Care
+          Read Something About PoorDoct Health Care
         </h2>
         <img src={linImg} alt="line" />
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi velit,
-          est ipsam adipisci cumque molestiae accusantium alias blanditiis
-          officia temporibus consequuntur sapiente nesciunt tempora hic optio
-          cupiditate at, odio ducimus! Laboriosam dignissimos, quam aliquid,
-          illum nemo tempore sapiente consectetur sed delectus nam.
+          PoorDoct Health Care provides comprehensive medical services, focusing
+          on personalized care and advanced treatments. They prioritize patient
+          well-being with skilled doctors, modern technology, and a
+          compassionate approach, ensuring effective diagnosis, treatment, and
+          preventive healthcare for individuals and families.
         </p>
         <div className="flex gap-6 items-center">
           <button className="btn bg-[#e12454] text-white p-6">

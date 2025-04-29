@@ -28,10 +28,9 @@ const Challenge = () => {
                   Satisfied Clients
                 </h3>
                 <p className="text-[#899dab] text-[15px]">
-                  Lorem ipsum dolor sit amet, <br />
-                  consectetur adipisicing elit. Vel <br />
-                  exercitationem temporibus fugiat vo <br /> accusantium
-                  deserunt!
+                  Our clients trust Poordoct for reliable, innovative healthcare
+                  solutions, appreciating our support, quality service, and
+                  commitment to excellence.
                 </p>
               </div>
             </div>
@@ -43,10 +42,9 @@ const Challenge = () => {
                   World Awards
                 </h3>
                 <p className="text-[#899dab] text-[15px]">
-                  Lorem ipsum dolor sit amet, <br />
-                  consectetur adipisicing elit. Vel <br />
-                  exercitationem temporibus fugiat vo <br /> accusantium
-                  deserunt!
+                  Poordoct Medical Solution has received global awards for
+                  innovation, excellence, and impact in healthcare technology
+                  and client-focused solutions.
                 </p>
               </div>
             </div>

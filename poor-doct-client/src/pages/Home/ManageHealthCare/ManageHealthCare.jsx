@@ -41,8 +41,9 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Eye Care</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Eye care involves regular check-ups, protecting eyes from
+                strain, using proper lighting, wearing sunglasses, and
+                maintaining a healthy diet.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
@@ -59,8 +60,8 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Blood Cancer</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Blood cancer, or hematologic cancer, affects blood, bone marrow,
+                or lymphatic system, including leukemia, lymphoma, and myeloma.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
@@ -77,8 +78,9 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Neurology Sargery</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Neurology surgery, or neurosurgery, involves treating disorders
+                of the nervous system, including brain, spine, and peripheral
+                nerve surgeries.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
@@ -95,8 +97,9 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Allergic Issue</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Allergic issues occur when the immune system overreacts to
+                harmless substances, causing symptoms like itching, swelling, or
+                breathing difficulties.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
@@ -113,8 +116,9 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Body Surgery</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Body surgery refers to medical procedures that involve the
+                removal, repair, or alteration of body parts to treat injuries,
+                diseases, or disorders.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
@@ -131,8 +135,9 @@ const ManageHealthCare = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title">Dental Care</h2>
               <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo.
+                Dental care involves maintaining oral health through regular
+                brushing, flossing, professional cleanings, and check-ups to
+                prevent tooth decay and gum disease.
               </p>
               <div className="card-actions">
                 <button className="btn btn-ghost">
