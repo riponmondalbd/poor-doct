@@ -1,14 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-
-import { useQuery } from "@tanstack/react-query";
-import "swiper/css";
-import { Keyboard } from "swiper/modules";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const Testimonials = () => {
@@ -23,7 +20,7 @@ const Testimonials = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mb-24">
       <SectionTitle
         heading={"Testimonials"}
         subHeading={"Get Every Single Updates From Here"}
@@ -33,11 +30,15 @@ const Testimonials = () => {
           rewind={true}
           mousewheel={true}
           keyboard={true}
+          pagination={{
+            dynamicBullets: true,
+            clickable: true,
+          }}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
-          modules={[Autoplay, Keyboard]}
+          modules={[Pagination, Autoplay, Keyboard]}
           className="mySwiper"
         >
           {testimonials.map((testimonial) => (
