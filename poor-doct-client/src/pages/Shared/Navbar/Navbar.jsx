@@ -18,7 +18,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 180) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -124,8 +124,10 @@ const Navbar = () => {
       </div>
       {/* main nav bar */}
       <div
-        className={`w-full bg-base-100 shadow-sm ${
-          isSticky ? "fixed top-0 z-10" : ""
+        className={`w-full bg-base-100 shadow-sm  ${
+          isSticky
+            ? "fixed top-0 z-10 animate-flip-down animate-once animate-ease-in-out"
+            : ""
         }`}
       >
         <div className="navbar max-w-7xl mx-auto">
