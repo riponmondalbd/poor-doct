@@ -7,7 +7,7 @@ const Challenge = () => {
       <div className="max-w-7xl mx-auto px-2 text-white py-28">
         <div className="md:flex lg:gap-28 items-center">
           {/* challenge left side component*/}
-          <div className="flex-1 pt-24 space-y-7">
+          <div className="flex-1 space-y-7">
             <h4 className="text-[#f3b4c3] text-xl font-medium">
               We are available 24/7
             </h4>
