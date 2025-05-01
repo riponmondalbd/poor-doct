@@ -1,15 +1,11 @@
 import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
-import { FaLaptopMedical } from "react-icons/fa";
-import { GiMedicines } from "react-icons/gi";
-import { LiaToothSolid } from "react-icons/lia";
-import { LuStethoscope } from "react-icons/lu";
 import doctorTeam from "../../../assets/AboutSection/doctor-team.jpg";
 import linImg from "../../../assets/line.png";
 
-const AboutSection = () => {
+const AboutPoorDoct = () => {
   return (
-    <div className="max-w-7xl mx-auto lg:flex items-center gap-8 px-2">
+    <div className="max-w-7xl mx-auto lg:flex lg:flex-row-reverse items-center gap-8 px-2">
       {/* left side images section */}
       <div className="flex-1">
         <img className="mt-2 lg:mt-0" src={doctorTeam} alt="Doctor Team" />
@@ -38,27 +34,9 @@ const AboutSection = () => {
             +880 1956 149980
           </p>
         </div>
-        <div className="flex">
-          <div>
-            <GiMedicines className="text-6xl text-[#e12454]" />
-            <h3 className="text-xl">Medicine & Health Care</h3>
-          </div>
-          <div>
-            <LuStethoscope className="text-6xl text-[#e12454]" />
-            <h3 className="text-xl">Doctor & Nurse Service</h3>
-          </div>
-          <div>
-            <LiaToothSolid className="text-6xl text-[#e12454]" />
-            <h3 className="text-xl">Dentaal Care Service</h3>
-          </div>
-          <div>
-            <FaLaptopMedical className="text-6xl text-[#e12454]" />
-            <h3 className="text-xl">Medical Equipment</h3>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-export default AboutSection;
+export default AboutPoorDoct;
