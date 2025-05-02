@@ -13,7 +13,7 @@ const Team = () => {
         heading={"Meat Our Team"}
         subHeading={"Our Experts Doctors"}
       />
-      <Link className="md:grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <Link className="md:grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {doctors.map((doctor) => (
           <Doctor key={doctor._id} doctor={doctor}></Doctor>
         ))}
