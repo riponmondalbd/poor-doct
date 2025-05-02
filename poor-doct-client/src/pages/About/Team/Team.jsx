@@ -14,7 +14,7 @@ const Team = () => {
         subHeading={"Our Experts Doctors"}
       />
       <Link className="md:grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {doctors.map((doctor) => (
+        {doctors.slice(0, 6).map((doctor) => (
           <Doctor key={doctor._id} doctor={doctor}></Doctor>
         ))}
       </Link>
