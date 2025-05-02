@@ -1,6 +1,6 @@
 import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
-import doctorTeam from "../../../assets/AboutSection/doctor-team.jpg";
+import doctorTeam from "../../../assets/AboutSection/about-doctor.jpg";
 import linImg from "../../../assets/line.png";
 
 const AboutPoorDoct = () => {
