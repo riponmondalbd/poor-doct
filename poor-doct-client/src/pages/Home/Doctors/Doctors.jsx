@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router";
 import "swiper/css";
@@ -6,19 +5,10 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useDoctors from "../../../hooks/useDoctors";
 
 const Doctors = () => {
-  const axiosPublic = useAxiosPublic();
-
-  const { data: doctors = [] } = useQuery({
-    queryKey: ["doctors"],
-    queryFn: async () => {
-      const res = await axiosPublic.get("/doctors");
-      console.log(res.data);
-      return res.data;
-    },
-  });
+  const [doctors] = useDoctors();
 
   return (
     <div className="max-w-7xl mx-auto px-2 mb-24">

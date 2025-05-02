@@ -1,4 +1,5 @@
 import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
@@ -8,8 +9,6 @@ import { Autoplay, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-
-import "@smastrom/react-rating/style.css";
 
 const Testimonials = () => {
   const axiosPublic = useAxiosPublic();
