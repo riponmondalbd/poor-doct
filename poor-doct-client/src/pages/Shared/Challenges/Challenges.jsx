@@ -1,7 +1,7 @@
 import React from "react";
 import { BsPersonFill } from "react-icons/bs";
 
-const Challenge = () => {
+const Challenges = () => {
   return (
     <div className="bg-[#223645]">
       <div className="max-w-7xl mx-auto px-2 text-white py-28">
@@ -55,4 +55,4 @@ const Challenge = () => {
   );
 };
 
-export default Challenge;
+export default Challenges;
