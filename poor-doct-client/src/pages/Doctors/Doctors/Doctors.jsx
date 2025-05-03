@@ -1,7 +1,8 @@
 import React from "react";
 import PageTopSection from "../../../components/PageTopSection/PageTopSection";
+import Challenges from "../../Shared/Challenges/Challenges";
 import AllDoctors from "../AllDoctors/AllDoctors";
-import AwardsAndAppointment from "../AwardsAndAppointment/AwardsAndAppointment";
+import DoctorProblemAward from "../DoctorProblemAward/DoctorProblemAward";
 
 const Doctors = () => {
   return (
@@ -9,7 +10,8 @@ const Doctors = () => {
       <title>Poor Doct | About</title>
       <PageTopSection title={"Doctors"} />
       <AllDoctors />
-      <AwardsAndAppointment />
+      <Challenges />
+      <DoctorProblemAward />
     </div>
   );
 };
