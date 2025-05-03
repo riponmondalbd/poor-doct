@@ -7,7 +7,7 @@ import DoctorProblemAward from "../DoctorProblemAward/DoctorProblemAward";
 const Doctors = () => {
   return (
     <div>
-      <title>Poor Doct | About</title>
+      <title>Poor Doct | Doctors</title>
       <PageTopSection title={"Doctors"} />
       <AllDoctors />
       <Challenges />

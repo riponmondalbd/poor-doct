@@ -4,6 +4,7 @@ import { FaLaptopMedical } from "react-icons/fa";
 import { GiMedicines } from "react-icons/gi";
 import { LiaToothSolid } from "react-icons/lia";
 import { LuStethoscope } from "react-icons/lu";
+import { Link } from "react-router";
 import doctorTeam from "../../../assets/AboutSection/doctor-team.jpg";
 import linImg from "../../../assets/line.png";
 
@@ -29,9 +30,11 @@ const AboutSection = () => {
           preventive healthcare for individuals and families.
         </p>
         <div className="flex gap-6 items-center">
-          <button className="btn bg-[#e12454] text-white p-6">
-            Click Here
-          </button>
+          <Link to={"/about"}>
+            <button className="btn bg-[#e12454] text-white p-6">
+              Click Here
+            </button>
+          </Link>
 
           <p className="flex items-center gap-1 text-xl">
             <BiPhoneCall className="text-4xl text-[#e12454]" />
