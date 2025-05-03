@@ -5,8 +5,10 @@ import { IoMdCall, IoMdMail } from "react-icons/io";
 import { Link, NavLink } from "react-router";
 
 import logo from "../../../assets/logo.png";
+import useScroll from "../../../hooks/useScroll";
 
 const Navbar = () => {
+  const scrollToTop = useScroll();
   const [isDark, setIsDark] = useState(
     JSON.parse(localStorage.getItem("isDark"))
   );
@@ -36,6 +38,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/"}
+          onClick={scrollToTop}
           className={({ isActive }) =>
             isActive ? "text-[#e12454] font-bold" : ""
           }
@@ -46,6 +49,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/about"}
+          onClick={scrollToTop}
           className={({ isActive }) =>
             isActive ? "text-[#e12454] font-bold" : ""
           }
@@ -56,6 +60,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/doctors"}
+          onClick={scrollToTop}
           className={({ isActive }) =>
             isActive ? "text-[#e12454] font-bold" : ""
           }
@@ -66,6 +71,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/contact"}
+          onClick={scrollToTop}
           className={({ isActive }) =>
             isActive ? "text-[#e12454] font-bold" : ""
           }
@@ -229,7 +235,11 @@ const Navbar = () => {
                 </g>
               </svg>
             </label>
-            <button className="btn bg-[#e12454] text-white">Contact Us</button>
+            <Link to={"/contact"} onClick={scrollToTop}>
+              <button className="btn bg-[#e12454] text-white">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </div>
       </div>

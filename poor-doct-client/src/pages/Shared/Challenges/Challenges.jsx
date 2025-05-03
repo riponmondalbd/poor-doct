@@ -1,7 +1,10 @@
 import React from "react";
 import { BsPersonFill } from "react-icons/bs";
+import { Link } from "react-router";
+import useScroll from "../../../hooks/useScroll";
 
 const Challenges = () => {
+  const scrollToTop = useScroll();
   return (
     <div className="bg-[#223645]">
       <div className="max-w-7xl mx-auto px-2 text-white py-28">
@@ -14,9 +17,11 @@ const Challenges = () => {
             <h2 className="text-4xl md:text-5xl font-bold my-7">
               We Always Ready For A Challenge.
             </h2>
-            <button className="btn bg-[#e12454] border-0 shadow text-white p-6 mb-10 md:mb-0">
-              MAKE APPOINTMENT
-            </button>
+            <Link to={"/contact"} onClick={scrollToTop}>
+              <button className="btn bg-[#e12454] border-0 shadow text-white p-6 mb-10 md:mb-0">
+                MAKE APPOINTMENT
+              </button>
+            </Link>
           </div>
           {/* challenge right side component*/}
           <div className="flex-1">

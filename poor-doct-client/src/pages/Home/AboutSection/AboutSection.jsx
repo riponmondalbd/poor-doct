@@ -7,8 +7,10 @@ import { LuStethoscope } from "react-icons/lu";
 import { Link } from "react-router";
 import doctorTeam from "../../../assets/AboutSection/doctor-team.jpg";
 import linImg from "../../../assets/line.png";
+import useScroll from "../../../hooks/useScroll";
 
 const AboutSection = () => {
+  const scrollToTop = useScroll();
   return (
     <div className="max-w-7xl mx-auto lg:flex items-center gap-8 px-2">
       {/* left side images section */}
@@ -30,7 +32,7 @@ const AboutSection = () => {
           preventive healthcare for individuals and families.
         </p>
         <div className="flex gap-6 items-center">
-          <Link to={"/about"}>
+          <Link to={"/about"} onClick={scrollToTop}>
             <button className="btn bg-[#e12454] text-white p-6">
               Click Here
             </button>

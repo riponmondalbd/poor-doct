@@ -11,7 +11,7 @@ const Appointment = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-2">
-        <div className="grid md:grid-cols-2 py-20">
+        <div className="grid md:grid-cols-2 py-24">
           <div className="bg-base-100 w-full shrink-0 shadow-2xl">
             <div className="card-body">
               <h4 className="text-[#e12454] text-xl font-medium">

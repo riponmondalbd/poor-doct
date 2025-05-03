@@ -1,9 +1,12 @@
 import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
+import { Link } from "react-router";
 import doctorTeam from "../../../assets/AboutSection/about-doctor.jpg";
 import linImg from "../../../assets/line.png";
+import useScroll from "../../../hooks/useScroll";
 
 const AboutPoorDoct = () => {
+  const scrollToTop = useScroll();
   return (
     <div className="max-w-7xl mx-auto lg:flex lg:flex-row-reverse items-center gap-8 px-2">
       {/* left side images section */}
@@ -25,10 +28,11 @@ const AboutPoorDoct = () => {
           preventive healthcare for individuals and families.
         </p>
         <div className="flex gap-6 items-center">
-          <button className="btn bg-[#e12454] text-white p-6">
-            Click Here
-          </button>
-
+          <Link to={"/doctors"} onClick={scrollToTop}>
+            <button className="btn bg-[#e12454] text-white p-6">
+              Click Here
+            </button>
+          </Link>
           <p className="flex items-center gap-1 text-xl">
             <BiPhoneCall className="text-4xl text-[#e12454]" />
             +880 1956 149980

@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "react-router";
 import linImg from "../../../assets/line.png";
+import useScroll from "../../../hooks/useScroll";
 import Services from "../../Shared/Services/Services";
 
 const ManageHealthCare = () => {
+  const scrollToTop = useScroll();
   return (
     <div className="bg-base-300">
       <div className="max-w-7xl mx-auto px-2">
@@ -20,9 +23,11 @@ const ManageHealthCare = () => {
           </div>
           {/* right side appointment section */}
           <div className="grid lg:justify-end pb-24 lg:pb-0">
-            <button className="btn bg-[#e12454] text-white p-6">
-              MAKE APPOINTMENT
-            </button>
+            <Link to={"/contact"} onClick={scrollToTop}>
+              <button className="btn bg-[#e12454] text-white p-6">
+                MAKE APPOINTMENT
+              </button>
+            </Link>
           </div>
         </div>
         {/* services groups */}
