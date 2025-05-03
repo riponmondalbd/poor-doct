@@ -1,5 +1,11 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md";
 import { Link } from "react-router";
 import logo from "../../../assets/white-logo.png";
@@ -47,36 +53,74 @@ const Footer = () => {
               focusing on underserved <br /> communities with compassionate
               treatment <br /> and essential medical support.
             </p>
+            <h6 className="footer-title mt-2">Follow Us On:</h6>
+            <div className="flex gap-6">
+              <Link
+                className="hover:text-[#04c065]"
+                to={"https://www.facebook.com/riponmondalbd"}
+                target="_blank"
+              >
+                <FaFacebook className="text-2xl" />
+              </Link>
+              <Link
+                className="hover:text-[#04c065]"
+                to={"https://x.com/ripon_mondal_bd"}
+                target="_blank"
+              >
+                <FaXTwitter className="text-2xl" />
+              </Link>
+              <Link
+                className="hover:text-[#04c065]"
+                to={"https://www.linkedin.com/in/riponmondalbd/"}
+                target="_blank"
+              >
+                <FaLinkedin className="text-2xl" />
+              </Link>
+              <Link
+                className="hover:text-[#04c065]"
+                to={"https://www.instagram.com/riponmondalbd/"}
+                target="_blank"
+              >
+                <FaInstagram className="text-2xl" />
+              </Link>
+            </div>
           </aside>
           <nav>
             <h6 className="footer-title">Quick Links</h6>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+            <a className="link link-hover hover:text-[#04c065]">Branding</a>
+            <a className="link link-hover hover:text-[#04c065]">Design</a>
+            <a className="link link-hover hover:text-[#04c065]">Marketing</a>
+            <a className="link link-hover hover:text-[#04c065]">
+              Advertisement
+            </a>
           </nav>
           <nav>
             <h6 className="footer-title">Recent Posts</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            <a className="link link-hover hover:text-[#04c065]">About us</a>
+            <a className="link link-hover hover:text-[#04c065]">Contact</a>
+            <a className="link link-hover hover:text-[#04c065]">Jobs</a>
+            <a className="link link-hover hover:text-[#04c065]">Press kit</a>
           </nav>
           <nav>
             <h6 className="footer-title">Contact Us</h6>
             <div className="flex gap-3 items-center">
-              <MdLocationOn className="text-[18px]" />
+              <MdLocationOn className="text-[18px] text-[#04c065]" />
               <p>Dhaka, Bangladesh</p>
             </div>
             <div className="flex gap-3 items-center link link-hover">
-              <MdEmail className="text-[18px]" />
-              <Link to={"mailto:riponmondal149@gmail.com"}>
+              <MdEmail className="text-[18px] text-[#04c065]" />
+              <Link
+                className="hover:text-[#04c065]"
+                to={"mailto:riponmondal149@gmail.com"}
+              >
                 riponmondal149@gmail.com
               </Link>
             </div>
             <div className="flex gap-3 items-center link link-hover">
-              <MdPhoneIphone className="text-[18px]" />
-              <Link to={"tel:+8801956149980"}>+880 1956 149980</Link>
+              <MdPhoneIphone className="text-[18px] text-[#04c065]" />
+              <Link className="hover:text-[#04c065]" to={"tel:+8801956149980"}>
+                +880 1956 149980
+              </Link>
             </div>
           </nav>
         </footer>
