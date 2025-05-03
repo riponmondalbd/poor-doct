@@ -1,5 +1,7 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md";
+import { Link } from "react-router";
 import logo from "../../../assets/white-logo.png";
 
 const Footer = () => {
@@ -62,9 +64,20 @@ const Footer = () => {
           </nav>
           <nav>
             <h6 className="footer-title">Contact Us</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
+            <div className="flex gap-3 items-center">
+              <MdLocationOn className="text-[18px]" />
+              <p>Dhaka, Bangladesh</p>
+            </div>
+            <div className="flex gap-3 items-center link link-hover">
+              <MdEmail className="text-[18px]" />
+              <Link to={"mailto:riponmondal149@gmail.com"}>
+                riponmondal149@gmail.com
+              </Link>
+            </div>
+            <div className="flex gap-3 items-center link link-hover">
+              <MdPhoneIphone className="text-[18px]" />
+              <Link to={"tel:+8801956149980"}>+880 1956 149980</Link>
+            </div>
           </nav>
         </footer>
         {/* border */}
