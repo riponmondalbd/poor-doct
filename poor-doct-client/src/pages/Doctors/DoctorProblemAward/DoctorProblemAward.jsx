@@ -14,7 +14,7 @@ const DoctorProblemAward = () => {
           <h3 className="flex text-[14px] text-[#04c065] font-medium items-center mb-2">
             Expert Doctors
           </h3>
-          <p className="text-[#899dab] text-[15px]">
+          <p className="text-[#899dab] text-[15px] text-center">
             A famous doctor in Poordoct is known for dedicated service,
             compassionate care, and improving health in underserved communities.
           </p>
@@ -26,7 +26,7 @@ const DoctorProblemAward = () => {
           <h3 className="flex text-[14px] text-[#04c065] font-medium items-center mb-2">
             Problem Solve
           </h3>
-          <p className="text-[#899dab] text-[15px]">
+          <p className="text-[#899dab] text-[15px] text-center">
             Poordoct focuses on solving key healthcare problems like lack of
             access, high costs, and limited awareness by offering affordable
             services.
@@ -39,7 +39,7 @@ const DoctorProblemAward = () => {
           <h3 className="flex text-[14px] text-[#04c065] font-medium items-center mb-2">
             Award Winner
           </h3>
-          <p className="text-[#899dab] text-[15px]">
+          <p className="text-[#899dab] text-[15px] text-center">
             Poordoct is an award-winning healthcare initiative recognized for
             its outstanding service, innovation, and impact in delivering care.
           </p>
