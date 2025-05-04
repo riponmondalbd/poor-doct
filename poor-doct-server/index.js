@@ -29,6 +29,7 @@ async function run() {
     const testimonialsCollection = client
       .db("PoorDoctDB")
       .collection("testimonials");
+    const categoryCollection = client.db("PoorDoctDB").collection("category");
 
     // doctors api's collection
     // get all doctors
@@ -41,6 +42,13 @@ async function run() {
     // get all testimonials
     app.get("/testimonials", async (req, res) => {
       const result = await testimonialsCollection.find().toArray();
+      res.send(result);
+    });
+
+    // category api's collection
+    // get all category
+    app.get("/category", async (req, res) => {
+      const result = await categoryCollection.find().toArray();
       res.send(result);
     });
 
