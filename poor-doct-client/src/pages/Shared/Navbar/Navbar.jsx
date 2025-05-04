@@ -79,6 +79,17 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to={"/faq"}
+          onClick={scrollToTop}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
+        >
+          FAQ
+        </NavLink>
+      </li>
     </>
   );
 
@@ -91,7 +102,7 @@ const Navbar = () => {
           <div className="flex gap-2">
             {/* time */}
             <p className="flex items-center gap-1">
-              <FaRegClock />
+              <FaRegClock className="-mt-1 text-[15px]" />
               08.00am - 09.00pm
             </p>
             {/* divider */}
