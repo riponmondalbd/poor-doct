@@ -81,6 +81,17 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to={"/department"}
+          onClick={scrollToTop}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
+        >
+          Department
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to={"/faq"}
           onClick={scrollToTop}
           className={({ isActive }) =>
