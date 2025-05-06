@@ -70,17 +70,6 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to={"/contact"}
-          onClick={scrollToTop}
-          className={({ isActive }) =>
-            isActive ? "text-[#e12454] font-bold" : ""
-          }
-        >
-          Contact
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
           to={"/department"}
           onClick={scrollToTop}
           className={({ isActive }) =>
@@ -99,6 +88,17 @@ const Navbar = () => {
           }
         >
           FAQ
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/contact"}
+          onClick={scrollToTop}
+          className={({ isActive }) =>
+            isActive ? "text-[#e12454] font-bold" : ""
+          }
+        >
+          Contact
         </NavLink>
       </li>
     </>

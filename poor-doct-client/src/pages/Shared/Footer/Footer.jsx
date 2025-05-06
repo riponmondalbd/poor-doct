@@ -56,28 +56,28 @@ const Footer = () => {
             <h6 className="footer-title mt-2">Follow Us On:</h6>
             <div className="flex gap-6">
               <Link
-                className="hover:text-[#04c065]"
+                className="hover:text-[#04c065] duration-300"
                 to={"https://www.facebook.com/riponmondalbd"}
                 target="_blank"
               >
                 <FaFacebook className="text-2xl" />
               </Link>
               <Link
-                className="hover:text-[#04c065]"
+                className="hover:text-[#04c065] duration-300"
                 to={"https://x.com/ripon_mondal_bd"}
                 target="_blank"
               >
                 <FaXTwitter className="text-2xl" />
               </Link>
               <Link
-                className="hover:text-[#04c065]"
+                className="hover:text-[#04c065] duration-300"
                 to={"https://www.linkedin.com/in/riponmondalbd/"}
                 target="_blank"
               >
                 <FaLinkedin className="text-2xl" />
               </Link>
               <Link
-                className="hover:text-[#04c065]"
+                className="hover:text-[#04c065] duration-300"
                 to={"https://www.instagram.com/riponmondalbd/"}
                 target="_blank"
               >

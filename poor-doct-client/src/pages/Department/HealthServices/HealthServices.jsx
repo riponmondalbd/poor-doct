@@ -36,7 +36,7 @@ const HealthServices = () => {
       <div className="flex-1">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
-            <FaStethoscope className="text-7xl " />
+            <FaStethoscope className="text-7xl" />
             <h3 className="textarea-xl font-medium">Free Doctor</h3>
           </div>
           <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
