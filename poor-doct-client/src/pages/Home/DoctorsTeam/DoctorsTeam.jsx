@@ -7,8 +7,8 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useDoctors from "../../../hooks/useDoctors";
 import DoctorSectionDetails from "../../Shared/DoctorSectionDetails/DoctorSectionDetails";
 
-const Doctors = () => {
-  const [doctors] = useDoctors();
+const DoctorsTeam = () => {
+  const [, doctors] = useDoctors();
 
   return (
     <div className="max-w-7xl mx-auto px-2 mb-24">
@@ -60,4 +60,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default DoctorsTeam;

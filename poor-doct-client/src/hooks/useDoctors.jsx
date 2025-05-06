@@ -3,14 +3,14 @@ import useAxiosPublic from "./useAxiosPublic";
 
 const useDoctors = () => {
   const axiosPublic = useAxiosPublic();
-  const { data: doctors = [] } = useQuery({
+  const { isPending, data: doctors = [] } = useQuery({
     queryKey: ["doctors"],
     queryFn: async () => {
       const res = await axiosPublic.get("/doctors");
       return res.data;
     },
   });
-  return [doctors];
+  return [isPending, doctors];
 };
 
 export default useDoctors;

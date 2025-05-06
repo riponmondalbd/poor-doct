@@ -4,7 +4,7 @@ import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
 import Department from "../pages/Department/Department/Department";
 import Doctors from "../pages/Doctors/Doctors/Doctors";
-import DoctorsDetailsPage from "../pages/Doctors/DoctorsDetailsPage/DoctorsDetailsPage";
+import DoctorsDetailsPage from "../pages/DoctorsDetailsPage/DoctorsDetailsPage";
 import Faq from "../pages/Faq/Faq/Faq";
 import Home from "../pages/Home/Home/Home";
 

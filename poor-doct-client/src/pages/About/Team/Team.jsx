@@ -4,7 +4,7 @@ import useDoctors from "../../../hooks/useDoctors";
 import Doctor from "../../Shared/Doctor/Doctor";
 
 const Team = () => {
-  const [doctors] = useDoctors();
+  const [, doctors] = useDoctors();
 
   return (
     <div className="max-w-7xl mx-auto mb-24">
