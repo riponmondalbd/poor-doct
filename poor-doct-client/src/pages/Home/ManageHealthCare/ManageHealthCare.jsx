@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router";
 import linImg from "../../../assets/line.png";
+import useCategory from "../../../hooks/useCategory";
 import useScroll from "../../../hooks/useScroll";
 import Services from "../../Shared/Services/Services";
 
 const ManageHealthCare = () => {
   const scrollToTop = useScroll();
+  const [categories] = useCategory();
   return (
     <div className="bg-base-300">
       <div className="max-w-7xl mx-auto px-2">
@@ -31,7 +33,11 @@ const ManageHealthCare = () => {
           </div>
         </div>
         {/* services groups */}
-        <Services />
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 pb-24">
+          {categories.slice(0, 3).map((category) => (
+            <Services key={category._id} category={category} />
+          ))}
+        </div>
       </div>
     </div>
   );
