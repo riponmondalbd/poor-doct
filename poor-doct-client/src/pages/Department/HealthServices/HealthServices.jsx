@@ -35,27 +35,27 @@ const HealthServices = () => {
       {/* right side images section */}
       <div className="flex-1">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <FaStethoscope className="text-7xl " />
             <h3 className="textarea-xl font-medium">Free Doctor</h3>
           </div>
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <LuAmbulance className="text-7xl " />
             <h3 className="textarea-xl font-medium">Free Ambulance</h3>
           </div>
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <LiaPillsSolid className="text-7xl  " />
             <h3 className="textarea-xl font-medium">Free Medicine</h3>
           </div>
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <MdOutlineScanner className="text-7xl  " />
             <h3 className="textarea-xl font-medium">Free Pathology</h3>
           </div>
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <MdOutlineBloodtype className="text-7xl  " />
             <h3 className="textarea-xl font-medium">Free Donner</h3>
           </div>
-          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 ">
+          <div className="bg-base-200 hover:bg-[#04c065] hover:text-white p-5 duration-300">
             <LiaXRaySolid className="text-7xl  " />
             <h3 className="textarea-xl font-medium">
               Free <br /> X-Rays

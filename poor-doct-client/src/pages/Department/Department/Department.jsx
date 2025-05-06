@@ -1,6 +1,7 @@
 import React from "react";
 import PageTopSection from "../../../components/PageTopSection/PageTopSection";
 import HealthServices from "../HealthServices/HealthServices";
+import OurServices from "../OurServices/OurServices";
 
 const Department = () => {
   return (
@@ -8,6 +9,7 @@ const Department = () => {
       <title>Poor Doct | Department</title>
       <PageTopSection title={"Department"} />
       <HealthServices />
+      <OurServices />
     </div>
   );
 };
