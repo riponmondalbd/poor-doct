@@ -91,32 +91,17 @@ const DoctorDetailsPageDoctorDetails = () => {
                 looking at that page layout. It is a long and established fact
                 that a reader will be then distracted.
               </p>
-              <div className="flex gap-5">
-                <div className="flex flex-col items-center">
-                  <h2 className="text-2xl font-semibold">Successful Surgery</h2>
-                  <div
-                    className="radial-progress text-[#04c065] hover:text-[#e12454] duration-300"
-                    style={{ "--value": 95 } /* as React.CSSProperties */}
-                    aria-valuenow={95}
-                    role="progressbar"
-                  >
-                    95%
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <h2 className="text-2xl font-semibold">
-                    Patients Satisfaction
-                  </h2>
-                  <div
-                    className="radial-progress text-[#04c065] hover:text-[#e12454] duration-300"
-                    style={{ "--value": 90 } /* as React.CSSProperties */}
-                    aria-valuenow={90}
-                    role="progressbar"
-                  >
-                    90%
-                  </div>
-                </div>
-              </div>
+
+              <h3 className=" font-bold text-[#e12454] py-2 uppercase">
+                Skills
+              </h3>
+              <ul>
+                {skills.map((skill, index) => (
+                  <li key={index}>
+                    {index + 1}. {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* awards */}
@@ -138,6 +123,16 @@ const DoctorDetailsPageDoctorDetails = () => {
                 looking at that page layout. It is a long and established fact
                 that a reader will be then distracted.
               </p>
+              <ul>
+                <h3 className=" font-bold text-[#e12454] py-2 uppercase">
+                  Awards
+                </h3>
+                {awards.map((award, index) => (
+                  <li key={index}>
+                    {index + 1}. {award}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
