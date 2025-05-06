@@ -6,10 +6,13 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Link } from "react-router";
 import bannerImage1 from "../../../assets/banner/doctor1.png";
 import bannerImage2 from "../../../assets/banner/doctor2.png";
+import useScroll from "../../../hooks/useScroll";
 
 const Banner = () => {
+  const scrollToTop = useScroll();
   return (
     <div>
       <Swiper
@@ -34,9 +37,11 @@ const Banner = () => {
               <p className="animate__animated animate__fadeInUp">
                 We've 20 Years of experience in Medical Services
               </p>
-              <button className="btn p-6 bg-[#e12454] text-white btn-secondary animate__animated animate__fadeInUp">
-                Our Services
-              </button>
+              <Link to={"/department"} onClick={scrollToTop}>
+                <button className="btn p-6 bg-[#e12454] text-white btn-secondary animate__animated animate__fadeInUp">
+                  Our Services
+                </button>
+              </Link>
             </div>
             <div>
               <img
@@ -59,9 +64,11 @@ const Banner = () => {
               <p className="animate__animated animate__fadeInUp">
                 We've 20 Years of experience in Medical Services
               </p>
-              <button className="btn p-6 bg-[#e12454] text-white animate__animated animate__fadeInUp">
-                Our Services
-              </button>
+              <Link to={"/department"} onClick={scrollToTop}>
+                <button className="btn p-6 bg-[#e12454] text-white animate__animated animate__fadeInUp">
+                  Our Services
+                </button>
+              </Link>
             </div>
             <div>
               <img
