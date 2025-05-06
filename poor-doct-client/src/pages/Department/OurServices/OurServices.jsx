@@ -1,11 +1,9 @@
 import React from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useCategory from "../../../hooks/useCategory";
-import useScroll from "../../../hooks/useScroll";
 import Services from "../../Shared/Services/Services";
 
 const OurServices = () => {
-  const scrollToTop = useScroll();
   const [categories] = useCategory();
   return (
     <div className="bg-base-300">

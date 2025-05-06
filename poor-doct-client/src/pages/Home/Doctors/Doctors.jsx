@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useDoctors from "../../../hooks/useDoctors";
+import DoctorSectionDetails from "../../Shared/DoctorSectionDetails/DoctorSectionDetails";
 
 const Doctors = () => {
   const [doctors] = useDoctors();
@@ -45,25 +45,13 @@ const Doctors = () => {
         >
           {doctors.map((doctor) => (
             <SwiperSlide key={doctor._id}>
-              <Link to={"/"}>
-                {/* slider details */}
-                <div className="relative mx-3">
-                  <img
-                    className="rounded-[6px]"
-                    src={doctor.image}
-                    alt={doctor.name}
-                  />
-                  <h2 className="absolute -bottom-5 -left-3 text-center py-5 px-4 rounded-full inline-block bg-[#04c065] hover:bg-[#e12454] text-white text-[14px] font-medium">
-                    Explore <br /> More
-                  </h2>
-                </div>
-                <h2 className="text-center text-2xl font-semibold mt-6 mb-2">
-                  {doctor.name}
-                </h2>
-                <h3 className="text-center font-medium text-[#65768a]">
-                  {doctor.designation}
-                </h3>
-              </Link>
+              {/* slider details */}
+              <DoctorSectionDetails
+                id={doctor._id}
+                image={doctor.image}
+                name={doctor.name}
+                designation={doctor.designation}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
