@@ -22,9 +22,6 @@ const DoctorDetailsPageDoctorDetails = () => {
     <div className="max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <img src={image} alt={name} />
-        </div>
-        <div>
           {/* name of each tab group should be unique */}
           <div className="tabs tabs-border bg-transparent shadow-none">
             {/* info */}
@@ -135,6 +132,9 @@ const DoctorDetailsPageDoctorDetails = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div>
+          <img src={image} alt={name} />
         </div>
       </div>
     </div>

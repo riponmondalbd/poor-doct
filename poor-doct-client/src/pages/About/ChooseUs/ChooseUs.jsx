@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router";
 import linImg from "../../../assets/line.png";
+import useScroll from "../../../hooks/useScroll";
 
 const ChooseUs = () => {
+  const scrollToTop = useScroll();
   return (
     <div className="max-w-7xl mx-auto lg:flex items-center gap-8 px-2">
       {/* left side about content section */}
@@ -21,9 +24,11 @@ const ChooseUs = () => {
           everyone.
         </p>
         {/* TODO: Hove color*/}
-        <button className="btn btn-link no-underline m-0 p-0 text-[#e12454]">
-          Click Here
-        </button>
+        <Link to={"/faq"} onClick={scrollToTop}>
+          <button className="btn btn-link no-underline m-0 p-0 text-[#e12454]">
+            Click Here
+          </button>
+        </Link>
       </div>
       {/* right side QNA section */}
       <div className="flex-1">
