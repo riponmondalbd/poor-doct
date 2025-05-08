@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useParams } from "react-router";
 import PageTopSection from "../../components/PageTopSection/PageTopSection";
 import useCategory from "../../hooks/useCategory";
+import Appointment from "../Contact/Appointment/Appointment";
 import DoctorsTeam from "../Home/DoctorsTeam/DoctorsTeam";
 
 const DepartmentDetails = () => {
@@ -17,7 +18,6 @@ const DepartmentDetails = () => {
   const department = category.find((department) => department._id === id);
   const {
     category_name,
-    category_shortDetails,
     category_fullDetails,
     category_images,
     category_whyChoseUs,
@@ -109,10 +109,10 @@ const DepartmentDetails = () => {
             </div>
           </div>
         </div>
-
-        {/* doctors */}
-        <DoctorsTeam />
       </div>
+      <Appointment />
+      {/* doctors */}
+      <DoctorsTeam />
     </div>
   );
 };
