@@ -15,7 +15,7 @@ const PageTopSection = ({ title }) => {
       <div className="hero h-[400px]">
         <div className="hero-overlay"></div>
         <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md">
+          <div>
             <h1 className="mb-5 text-5xl font-semibold">{title}</h1>
           </div>
         </div>

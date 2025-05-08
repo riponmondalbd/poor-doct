@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
 import Department from "../pages/Department/Department/Department";
+import DepartmentDetails from "../pages/DepartmentDetails/DepartmentDetails";
 import Doctors from "../pages/Doctors/Doctors/Doctors";
 import DoctorsDetailsPage from "../pages/DoctorsDetailsPage/DoctorsDetailsPage/DoctorsDetailsPage";
 import Faq from "../pages/Faq/Faq/Faq";
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "department",
         element: <Department />,
+      },
+      {
+        path: "department-details/:id",
+        element: <DepartmentDetails />,
       },
       {
         path: "faq",

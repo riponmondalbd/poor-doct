@@ -4,7 +4,7 @@ import useCategory from "../../../hooks/useCategory";
 import Services from "../../Shared/Services/Services";
 
 const ServiceProvide = () => {
-  const [categories] = useCategory();
+  const [, categories] = useCategory();
   return (
     <div className="bg-base-300">
       <div className="max-w-7xl mx-auto">
