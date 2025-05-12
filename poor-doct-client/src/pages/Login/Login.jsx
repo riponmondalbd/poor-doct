@@ -1,4 +1,5 @@
 import Lottie from "lottie-react";
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 import loginImage from "../../assets/login/login.json";
 import useAuth from "../../hooks/useAuth";
@@ -9,26 +10,25 @@ const Login = () => {
   const handleGoogleLoginIn = () => {
     googleLogin()
       .then((result) => {
-        const user = result.user;
-        if (user) {
+        // console.log(result.user);
+        if (result.user) {
           Swal.fire({
-            title: "Login In Successfully!",
+            title: `Hi ${result.user.displayName.split(" ").slice(" ")[0]}`,
+            text: "You Login is Successfully!",
             icon: "success",
             draggable: true,
             timer: 1500,
           });
         }
       })
+
       .catch((error) => {
-        if (error) {
-          Swal.fire({
-            title: `error.message`,
-            icon: "error",
-            draggable: true,
-            timer: 1500,
-          });
-        }
-        console.log(error.message);
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+          draggable: true,
+          timer: 1500,
+        });
       });
   };
   return (
@@ -49,6 +49,12 @@ const Login = () => {
               </div>
               <button className="btn btn-neutral mt-4">Login</button>
             </fieldset>
+            <p>
+              New Hare?{" "}
+              <Link className="text-[#04c065]">
+                <small>Create an Account</small>
+              </Link>
+            </p>
             <div className="divider">or</div>
             {/* google login */}
             <button
