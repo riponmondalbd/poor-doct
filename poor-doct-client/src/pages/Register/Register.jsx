@@ -1,8 +1,11 @@
+import { updateProfile } from "firebase/auth";
 import { ErrorMessage, Form, Formik } from "formik";
 import Lottie from "lottie-react";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 import * as Yup from "yup";
 import registerImage from "../../assets/register/register.json";
+import useAuth from "../../hooks/useAuth";
 
 const passwordRegex =
   /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&`^])[A-Za-z\d@$!%*?#&`^]{6,}/;
@@ -18,6 +21,8 @@ const signUpSchema = Yup.object().shape({
     .required("required"),
 });
 const Register = () => {
+  const { createUser } = useAuth();
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
@@ -30,9 +35,42 @@ const Register = () => {
             validationSchema={signUpSchema}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
-                console.log(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 400);
+              // create user
+              createUser(values.email, values.password)
+                .then((result) => {
+                  updateProfile(result.user, {
+                    displayName: values.name,
+                  })
+                    .then(() => {
+                      Swal.fire({
+                        title: `Hi ${
+                          result.user.displayName.split(" ").slice(" ")[0]
+                        }`,
+                        text: "You SignUp is Successfully!",
+                        icon: "success",
+                        draggable: true,
+                        timer: 1500,
+                      });
+                    })
+                    .catch((error) => {
+                      Swal.fire({
+                        title: `${error.message}`,
+                        icon: "error",
+                        draggable: true,
+                        timer: 1500,
+                      });
+                    });
+                })
+                .catch((error) => {
+                  Swal.fire({
+                    title: `${error.message}`,
+                    icon: "error",
+                    draggable: true,
+                    timer: 1500,
+                  });
+                });
             }}
           >
             {({
