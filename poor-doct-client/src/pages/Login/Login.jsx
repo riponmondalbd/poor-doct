@@ -1,10 +1,39 @@
 import Lottie from "lottie-react";
+import Swal from "sweetalert2";
 import loginImage from "../../assets/login/login.json";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
+  const { googleLogin } = useAuth();
+
+  const handleGoogleLoginIn = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        if (user) {
+          Swal.fire({
+            title: "Login In Successfully!",
+            icon: "success",
+            draggable: true,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((error) => {
+        if (error) {
+          Swal.fire({
+            title: `error.message`,
+            icon: "error",
+            draggable: true,
+            timer: 1500,
+          });
+        }
+        console.log(error.message);
+      });
+  };
   return (
     <div className="hero bg-base-200 min-h-[90vh]">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         <div className="text-center lg:text-left">
           <Lottie animationData={loginImage} loop={true} />
         </div>
@@ -22,7 +51,10 @@ const Login = () => {
             </fieldset>
             <div className="divider">or</div>
             {/* google login */}
-            <button className="btn bg-white text-black border-[#e5e5e5]">
+            <button
+              onClick={handleGoogleLoginIn}
+              className="btn bg-white text-black border-[#e5e5e5]"
+            >
               <svg
                 aria-label="Google logo"
                 width="16"
