@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
-import loginImage from "../../assets/login/login.json";
+import loginImage from "../../assets/register/register.json";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
@@ -34,16 +34,24 @@ const Login = () => {
   return (
     <div className="hero bg-base-200 min-h-[90vh]">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
-        <div className="text-center lg:text-left">
-          <Lottie animationData={loginImage} loop={true} />
+        <div className="text-center w-full lg:w-1/2 lg:text-left">
+          <Lottie className="w-full" animationData={loginImage} loop={true} />
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full lg:w-1/2 shrink-0 shadow-2xl">
           <div className="card-body">
             <fieldset className="fieldset">
               <label className="label">Email</label>
-              <input type="email" className="input" placeholder="Email" />
+              <input
+                type="email"
+                className="input w-full"
+                placeholder="Email"
+              />
               <label className="label">Password</label>
-              <input type="password" className="input" placeholder="Password" />
+              <input
+                type="password"
+                className="input w-full"
+                placeholder="Password"
+              />
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
@@ -51,8 +59,8 @@ const Login = () => {
             </fieldset>
             <p>
               New Hare?{" "}
-              <Link className="text-[#04c065]">
-                <small>Create an Account</small>
+              <Link to={"/register"} className="text-[#04c065]">
+                Create an Account
               </Link>
             </p>
             <div className="divider">or</div>
