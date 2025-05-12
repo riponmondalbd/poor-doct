@@ -1,7 +1,7 @@
 import { updateProfile } from "firebase/auth";
 import { ErrorMessage, Form, Formik } from "formik";
 import Lottie from "lottie-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import registerImage from "../../assets/register/register.json";
@@ -21,7 +21,8 @@ const signUpSchema = Yup.object().shape({
     .required("required"),
 });
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, LogOutUser } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -40,6 +41,7 @@ const Register = () => {
               // create user
               createUser(values.email, values.password)
                 .then((result) => {
+                  // update user
                   updateProfile(result.user, {
                     displayName: values.name,
                   })
@@ -53,6 +55,11 @@ const Register = () => {
                         draggable: true,
                         timer: 1500,
                       });
+                      //   logout user
+                      LogOutUser()
+                        .then(() => {})
+                        .catch(() => {});
+                      navigate("/login");
                     })
                     .catch((error) => {
                       Swal.fire({
