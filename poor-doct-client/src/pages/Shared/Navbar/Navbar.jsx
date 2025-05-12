@@ -4,13 +4,15 @@ import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { Link, NavLink } from "react-router";
 
+import Swal from "sweetalert2";
 import logo from "../../../assets/logo.png";
 import useAuth from "../../../hooks/useAuth";
 import useScroll from "../../../hooks/useScroll";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, LogOutUser } = useAuth();
   const scrollToTop = useScroll();
+
   const [isDark, setIsDark] = useState(
     JSON.parse(localStorage.getItem("isDark"))
   );
@@ -33,6 +35,28 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleLogOut = () => {
+    LogOutUser()
+      .then(() => {
+        Swal.fire({
+          title: "Log Out Successfully!",
+          icon: "success",
+          draggable: true,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        if (error) {
+          Swal.fire({
+            title: `error.message`,
+            icon: "error",
+            draggable: true,
+            timer: 1500,
+          });
+        }
+      });
+  };
 
   // nav links
   const navLinks = (
@@ -288,7 +312,7 @@ const Navbar = () => {
                     <a>Settings</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <a onClick={handleLogOut}>Logout</a>
                   </li>
                 </ul>
               </div>
