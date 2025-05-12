@@ -8,6 +8,7 @@ import Doctors from "../pages/Doctors/Doctors/Doctors";
 import DoctorsDetailsPage from "../pages/DoctorsDetailsPage/DoctorsDetailsPage/DoctorsDetailsPage";
 import Faq from "../pages/Faq/Faq/Faq";
 import Home from "../pages/Home/Home/Home";
+import Login from "../pages/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "faq",
         element: <Faq />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },
