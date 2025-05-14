@@ -7,18 +7,20 @@ import { Link, NavLink } from "react-router";
 import Swal from "sweetalert2";
 import logo from "../../../assets/logo.png";
 import useAuth from "../../../hooks/useAuth";
+import useDark from "../../../hooks/useDark";
 import useScroll from "../../../hooks/useScroll";
 
 const Navbar = () => {
   const { user, LogOutUser } = useAuth();
   const scrollToTop = useScroll();
+  const { isDark, setIsDark } = useDark();
 
-  const [isDark, setIsDark] = useState(
-    JSON.parse(localStorage.getItem("isDark"))
-  );
-  useEffect(() => {
-    localStorage.setItem("isDark", JSON.stringify(isDark));
-  }, [isDark]);
+  // const [isDark, setIsDark] = useState(
+  //   JSON.parse(localStorage.getItem("isDark"))
+  // );
+  // useEffect(() => {
+  //   localStorage.setItem("isDark", JSON.stringify(isDark));
+  // }, [isDark]);
 
   const [isSticky, setIsSticky] = useState(false);
 
@@ -230,7 +232,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
           <div className="navbar-end gap-2">
-            {/* make dark mode or theme changer darka and white */}
+            {/* make dark mode or theme changer dark and white */}
             <label className="toggle text-base-content">
               <input
                 type="checkbox"
@@ -298,10 +300,15 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                 >
                   <li>
-                    <a>Profile</a>
+                    <Link onClick={scrollToTop} to={"/dashboard"}>
+                      Dashboard
+                    </Link>
                   </li>
                   <li>
-                    <a onClick={handleLogOut}>Logout</a>
+                    <Link onClick={scrollToTop}>Profile</Link>
+                  </li>
+                  <li>
+                    <Link onClick={handleLogOut}>Logout</Link>
                   </li>
                 </ul>
               </div>
