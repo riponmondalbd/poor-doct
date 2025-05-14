@@ -237,7 +237,7 @@ const Navbar = () => {
                 value="sunset"
                 className="theme-controller"
                 // checked={isDark === true ? false : true}
-                checked={!isDark}
+                checked={isDark}
                 onChange={() => setIsDark(!isDark)}
               />
 
