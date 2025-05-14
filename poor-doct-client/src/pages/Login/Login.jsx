@@ -1,6 +1,6 @@
 import { ErrorMessage, Form, Formik } from "formik";
 import Lottie from "lottie-react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import loginImage from "../../assets/register/register.json";
@@ -21,6 +21,10 @@ const signUpSchema = Yup.object().shape({
 
 const Login = () => {
   const { googleLogin, loginInUser } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log(location);
 
   const handleGoogleLoginIn = () => {
     googleLogin()
@@ -34,6 +38,7 @@ const Login = () => {
             draggable: true,
             timer: 1500,
           });
+          navigate(from, { replace: true });
         }
       })
 
@@ -74,6 +79,7 @@ const Login = () => {
                       draggable: true,
                       timer: 1500,
                     });
+                    navigate(from, { replace: true });
                   }
                 })
                 .catch((error) => {
