@@ -12,6 +12,7 @@ import Faq from "../pages/Faq/Faq/Faq";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoutes from "./privateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -62,7 +63,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoutes>
+        <Dashboard />
+      </PrivateRoutes>
+    ),
     children: [
       {
         path: "profile",
