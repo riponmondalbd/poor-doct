@@ -305,9 +305,6 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={scrollToTop}>Profile</Link>
-                  </li>
-                  <li>
                     <Link onClick={handleLogOut}>Logout</Link>
                   </li>
                 </ul>

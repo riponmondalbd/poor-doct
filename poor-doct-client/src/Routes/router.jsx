@@ -3,6 +3,7 @@ import Dashboard from "../layout/Dashboard";
 import Root from "../layout/Root";
 import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
+import Profile from "../pages/Dashboard/Profile/Profile";
 import Department from "../pages/Department/Department/Department";
 import DepartmentDetails from "../pages/DepartmentDetails/DepartmentDetails";
 import Doctors from "../pages/Doctors/Doctors/Doctors";
@@ -62,6 +63,12 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <Dashboard />,
+    children: [
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
   },
 ]);
 
