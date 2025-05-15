@@ -30,6 +30,9 @@ async function run() {
       .db("PoorDoctDB")
       .collection("testimonials");
     const categoryCollection = client.db("PoorDoctDB").collection("category");
+    const appointmentCollection = client
+      .db("PoorDoctDB")
+      .collection("appointments");
 
     // doctors api's collection
     // get all doctors
@@ -49,6 +52,14 @@ async function run() {
     // get all category
     app.get("/category", async (req, res) => {
       const result = await categoryCollection.find().toArray();
+      res.send(result);
+    });
+
+    // appointment api's collection
+    // create appointment
+    app.post("/appointment", async (req, res) => {
+      const appointment = req.body;
+      const result = await appointmentCollection.insertOne(appointment);
       res.send(result);
     });
 
