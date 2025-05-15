@@ -1,7 +1,10 @@
+import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
+
 const Profile = () => {
   return (
     <div>
-      <h2>hello from profile</h2>
+      <title>Poor Doct | Profile</title>
+      <DashboardNavbar pageTitle={"Profile"} />
     </div>
   );
 };

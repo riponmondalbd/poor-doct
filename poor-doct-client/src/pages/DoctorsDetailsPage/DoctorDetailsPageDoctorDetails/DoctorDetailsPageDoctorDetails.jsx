@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link, useParams } from "react-router";
@@ -20,7 +19,7 @@ const DoctorDetailsPageDoctorDetails = () => {
     doctor;
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="grid md:grid-cols-2 gap-10 items-center px-2">
         <div>
           {/* name of each tab group should be unique */}
           <div className="tabs tabs-border bg-transparent shadow-none">

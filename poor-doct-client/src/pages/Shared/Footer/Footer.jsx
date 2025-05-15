@@ -1,4 +1,3 @@
-import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import {
   FaFacebook,
@@ -13,7 +12,7 @@ import logo from "../../../assets/white-logo.png";
 const Footer = () => {
   return (
     <div className="bg-[#223645]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-2">
         {/* navbar logo with Subscription and satisfied client section */}
 
         <div className="flex-row md:flex space-y-6 md:space-y-0 justify-between items-center py-10">
@@ -45,7 +44,7 @@ const Footer = () => {
         <div className="border-b-1 border-[#7c8085] "></div>
 
         {/* navbar menu with recent and contact us items */}
-        <footer className="footer sm:footer-horizontal p-10  text-white">
+        <footer className="footer sm:footer-horizontal py-10  text-white">
           <aside>
             <h6 className="footer-title">About Us</h6>
             <p>
