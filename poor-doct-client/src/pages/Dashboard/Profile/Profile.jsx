@@ -1,5 +1,6 @@
 import { FaRegCalendarAlt, FaRegStar } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { GoPencil } from "react-icons/go";
 import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
 import useAuth from "../../../hooks/useAuth";
 
@@ -18,6 +19,9 @@ const Profile = () => {
                 <img src={user?.photoURL} />
               </div>
             </div>
+            <a className="link left-0 bottom-0">
+              <GoPencil />
+            </a>
             <div className="card-body">
               <h2 className="card-title text-2xl">{user.displayName}</h2>
             </div>
