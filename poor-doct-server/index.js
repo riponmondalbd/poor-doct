@@ -49,6 +49,14 @@ async function run() {
       res.send(result);
     });
 
+    // get user
+    app.get("/user", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+      const result = await userCollection.find(query).toArray();
+      res.send(result);
+    });
+
     // doctors api's collection
     // get all doctors
     app.get("/doctors", async (req, res) => {
