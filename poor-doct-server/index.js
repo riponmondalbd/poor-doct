@@ -25,6 +25,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+    const userCollection = client.db("PoorDoctDB").collection("users");
     const doctorCollection = client.db("PoorDoctDB").collection("doctors");
     const testimonialsCollection = client
       .db("PoorDoctDB")
@@ -33,6 +34,14 @@ async function run() {
     const appointmentCollection = client
       .db("PoorDoctDB")
       .collection("appointments");
+
+    // users api's collection
+    // pot a user
+    app.post("/user", async (req, res) => {
+      const user = req.body;
+      const result = await userCollection.insertOne(user);
+      res.send(result);
+    });
 
     // doctors api's collection
     // get all doctors

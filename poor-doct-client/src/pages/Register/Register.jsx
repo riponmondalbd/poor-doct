@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import * as Yup from "yup";
 import registerImage from "../../assets/register/register.json";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const passwordRegex =
   /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&`^])[A-Za-z\d@$!%*?#&`^]{6,}/;
@@ -23,6 +24,7 @@ const signUpSchema = Yup.object().shape({
 const Register = () => {
   const { createUser, LogOutUser } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -38,6 +40,8 @@ const Register = () => {
               setTimeout(() => {
                 setSubmitting(false);
               }, 400);
+
+              const userInfo = { email: values.email, name: values.name };
               // create user
               createUser(values.email, values.password)
                 .then((result) => {
@@ -46,15 +50,20 @@ const Register = () => {
                     displayName: values.name,
                   })
                     .then(() => {
-                      Swal.fire({
-                        title: `Hi ${
-                          result.user.displayName.split(" ").slice(" ")[0]
-                        }`,
-                        text: "You SignUp is Successfully!",
-                        icon: "success",
-                        draggable: true,
-                        timer: 1500,
+                      axiosPublic.post("/user", userInfo).then((res) => {
+                        if (res.data.insertedId) {
+                          Swal.fire({
+                            title: `Hi ${
+                              result.user.displayName.split(" ").slice(" ")[0]
+                            }`,
+                            text: "You SignUp is Successfully!",
+                            icon: "success",
+                            draggable: true,
+                            timer: 1500,
+                          });
+                        }
                       });
+
                       //   logout user
                       LogOutUser()
                         .then(() => {})

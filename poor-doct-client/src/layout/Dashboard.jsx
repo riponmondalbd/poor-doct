@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="flex">
-        <div className="w-2/5 lg:w-1/6 bg-base-300 min-h-screen p-2">
+        <div className="w-2/6 lg:w-1/6 bg-base-300 min-h-screen p-2">
           <img className="md:w-1/2 lg:w-[90%]" src={logo} alt="logo" />
           {/* make dark mode or theme changer dark and white */}
           <label className="flex cursor-pointer gap-2 ml-6 mt-4">
@@ -249,7 +249,7 @@ const Dashboard = () => {
           </ul>
         </div>
 
-        <div className="w-3/5 lg:w-5/6 ">
+        <div className="w-4/6 lg:w-5/6 ">
           <Outlet />
         </div>
       </div>

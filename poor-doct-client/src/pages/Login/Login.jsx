@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import * as Yup from "yup";
 import loginImage from "../../assets/register/register.json";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const passwordRegex =
   /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&`^])[A-Za-z\d@$!%*?#&`^]{6,}/;
@@ -24,21 +25,28 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const axiosPublic = useAxiosPublic();
 
   const handleGoogleLoginIn = () => {
     googleLogin()
       .then((result) => {
         // console.log(result.user);
-        if (result.user) {
-          Swal.fire({
-            title: `Hi ${result.user.displayName.split(" ").slice(" ")[0]}`,
-            text: "You Login is Successfully!",
-            icon: "success",
-            draggable: true,
-            timer: 1500,
-          });
-          navigate(from, { replace: true });
-        }
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+        };
+        axiosPublic.post("/user", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              title: `Hi ${result.user.displayName.split(" ").slice(" ")[0]}`,
+              text: "You Login is Successfully!",
+              icon: "success",
+              draggable: true,
+              timer: 1500,
+            });
+            navigate(from, { replace: true });
+          }
+        });
       })
 
       .catch((error) => {
