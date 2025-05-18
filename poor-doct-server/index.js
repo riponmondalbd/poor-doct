@@ -49,7 +49,12 @@ async function run() {
       res.send(result);
     });
 
-    // get user
+    // get all user
+    app.get("/users", async (req, res) => {
+      const result = await userCollection.find().toArray();
+      res.send(result);
+    });
+    // get user by using email
     app.get("/user", async (req, res) => {
       const email = req.query.email;
       const query = { email: email };
@@ -70,6 +75,20 @@ async function run() {
         },
       };
       const result = await userCollection.updateOne(filter, updatedDoc);
+    });
+
+    // make admin
+    app.patch("/users/role/:id", async (req, res) => {
+      const user = req.body;
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updatedDoc = {
+        $set: {
+          role: user.role,
+        },
+      };
+      const result = await userCollection.updateOne(filter, updatedDoc);
+      res.send(result);
     });
 
     // doctors api's collection

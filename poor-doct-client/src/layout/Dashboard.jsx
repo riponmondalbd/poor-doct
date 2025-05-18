@@ -105,13 +105,13 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"/dashboard/make-admin"}
+                      to={"/dashboard/change-role"}
                       onClick={scrollToTop}
                       className={({ isActive }) =>
                         isActive ? "text-[#e12454] font-bold" : ""
                       }
                     >
-                      Make Admin
+                      Change Role
                     </NavLink>
                   </li>
                   <li>

@@ -15,7 +15,7 @@ const Navbar = () => {
   const { user, LogOutUser } = useAuth();
   const scrollToTop = useScroll();
   const { isDark, setIsDark } = useDark();
-  const [refetch, currentUser] = useUser();
+  const [, currentUser] = useUser();
 
   // const [isDark, setIsDark] = useState(
   //   JSON.parse(localStorage.getItem("isDark"))

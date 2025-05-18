@@ -3,6 +3,7 @@ import Dashboard from "../layout/Dashboard";
 import Root from "../layout/Root";
 import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
+import ChangeRole from "../pages/Dashboard/ChangeRole/ChangeRole";
 import Profile from "../pages/Dashboard/Profile/Profile";
 import Department from "../pages/Department/Department/Department";
 import DepartmentDetails from "../pages/DepartmentDetails/DepartmentDetails";
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "change-role",
+        element: <ChangeRole />,
       },
     ],
   },
