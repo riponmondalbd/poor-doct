@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { FaRegCalendarAlt, FaRegStar } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
@@ -6,39 +5,44 @@ import { LuPencilLine } from "react-icons/lu";
 import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useUser from "../../../hooks/useUser";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const Profile = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const { user } = useAuth();
   const axiosPublic = useAxiosPublic();
+  const [refetch, currentUser] = useUser();
 
-  const { refetch, data: users = [] } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/user?email=${users.email}`);
-      console.log(res.data);
-      return res.data;
-    },
-  });
+  // console.log(currentUser[0]);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    // make image hosting
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: { "content-Type": "multipart/form-data" },
     });
+
     if (res.data.success) {
-      const menuItem = {
+      const updateItem = {
         name: data.name,
         image: res.data.data.display_url,
       };
 
-      console.log(menuItem);
+      const userRes = axiosPublic.patch(
+        `/user/${currentUser[0]?._id}`,
+        updateItem
+      );
+      refetch();
+      console.log(userRes);
     }
-    console.log("with image url", res.data);
+    // console.log("with image url", res.data);
+  };
+
+  const handleReload = () => {
+    window.location.reload();
   };
 
   return (
@@ -51,12 +55,14 @@ const Profile = () => {
           <div className="lg:w-1/2 card bg-base-100 shadow-sm items-center mb-5 lg:mb-0">
             <div className="avatar">
               <div className="ring-primary ring-offset-base-100 h-[200px] rounded-full ring-3 ring-offset-2">
-                <img src={user?.photoURL} />
+                <img src={currentUser[0]?.image || user?.photoURL} />
               </div>
             </div>
 
             <div className="card-body">
-              <h2 className="card-title text-2xl">{user.displayName}</h2>
+              <h2 className="card-title text-2xl">
+                {currentUser[0]?.name || user?.displayName}
+              </h2>
             </div>
             <button
               className="btn btn-link"
@@ -92,7 +98,10 @@ const Profile = () => {
           <div className="modal-box">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              <button
+                onClick={handleReload}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
                 ✕
               </button>
             </form>
@@ -112,7 +121,7 @@ const Profile = () => {
                       type="text"
                       className="input w-full"
                       placeholder="Name"
-                      defaultValue={user.displayName}
+                      defaultValue={currentUser[0]?.name}
                       {...register("name", { required: true })}
                     />
                   </fieldset>

@@ -9,11 +9,13 @@ import logo from "../../../assets/logo.png";
 import useAuth from "../../../hooks/useAuth";
 import useDark from "../../../hooks/useDark";
 import useScroll from "../../../hooks/useScroll";
+import useUser from "../../../hooks/useUser";
 
 const Navbar = () => {
   const { user, LogOutUser } = useAuth();
   const scrollToTop = useScroll();
   const { isDark, setIsDark } = useDark();
+  const [refetch, currentUser] = useUser();
 
   // const [isDark, setIsDark] = useState(
   //   JSON.parse(localStorage.getItem("isDark"))
@@ -292,7 +294,10 @@ const Navbar = () => {
                   className="btn btn-ghost btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img alt={user.displayName} src={user.photoURL} />
+                    <img
+                      alt={user.displayName}
+                      src={currentUser[0]?.image || user?.photoURL}
+                    />
                   </div>
                 </div>
                 <ul

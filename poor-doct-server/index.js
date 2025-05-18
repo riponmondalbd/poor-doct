@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.4ylud.mongodb.net/?appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -55,6 +55,21 @@ async function run() {
       const query = { email: email };
       const result = await userCollection.find(query).toArray();
       res.send(result);
+      console.log(result);
+    });
+
+    // update a user
+    app.patch("/user/:id", async (req, res) => {
+      const item = req.body;
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updatedDoc = {
+        $set: {
+          name: item.name,
+          image: item.image,
+        },
+      };
+      const result = await userCollection.updateOne(filter, updatedDoc);
     });
 
     // doctors api's collection
