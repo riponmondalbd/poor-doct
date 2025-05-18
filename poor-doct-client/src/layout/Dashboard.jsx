@@ -2,11 +2,15 @@ import { NavLink, Outlet } from "react-router";
 import logo from "../assets/differentLogo.png";
 import useDark from "../hooks/useDark";
 import useScroll from "../hooks/useScroll";
+import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
   const { scrollToTop } = useScroll();
   const { isDark, setIsDark } = useDark();
-  const role = "admin";
+  const [, user] = useUser();
+
+  // set role
+  const role = user[0]?.role;
 
   return (
     <div>
@@ -55,7 +59,7 @@ const Dashboard = () => {
           <div className="divider mb-0"></div>
 
           <>
-            {role === "admin" ? (
+            {role === "Admin" ? (
               <div>
                 {/* admin nav */}
                 <ul className="menu w-full p-4 space-y-3">
@@ -127,7 +131,7 @@ const Dashboard = () => {
                   </li>
                 </ul>
               </div>
-            ) : role === "doctor" ? (
+            ) : role === "Doctor" ? (
               <div>
                 {/* doctor nav */}
                 <ul className="menu w-full p-4 space-y-3">
@@ -150,7 +154,7 @@ const Dashboard = () => {
                         isActive ? "text-[#e12454] font-bold" : ""
                       }
                     >
-                      Appointments
+                      All Appointments
                     </NavLink>
                   </li>
                   <li>
@@ -161,7 +165,7 @@ const Dashboard = () => {
                         isActive ? "text-[#e12454] font-bold" : ""
                       }
                     >
-                      Reviews
+                      All Reviews
                     </NavLink>
                   </li>
                 </ul>

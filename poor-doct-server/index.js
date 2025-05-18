@@ -60,7 +60,7 @@ async function run() {
       const query = { email: email };
       const result = await userCollection.find(query).toArray();
       res.send(result);
-      console.log(result);
+      // console.log(result);
     });
 
     // update a user
@@ -77,7 +77,7 @@ async function run() {
       const result = await userCollection.updateOne(filter, updatedDoc);
     });
 
-    // make admin
+    // make role
     app.patch("/users/role/:id", async (req, res) => {
       const user = req.body;
       const id = req.params.id;
