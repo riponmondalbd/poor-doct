@@ -5,6 +5,7 @@ import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
 import ChangeRole from "../pages/Dashboard/ChangeRole/ChangeRole";
 import Profile from "../pages/Dashboard/Profile/Profile";
+import ShowAppointment from "../pages/Dashboard/ShowAppointment/ShowAppointment";
 import Department from "../pages/Department/Department/Department";
 import DepartmentDetails from "../pages/DepartmentDetails/DepartmentDetails";
 import Doctors from "../pages/Doctors/Doctors/Doctors";
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "change-role",
         element: <ChangeRole />,
+      },
+      {
+        path: "appointment",
+        element: <ShowAppointment />,
       },
     ],
   },

@@ -3,7 +3,7 @@ import useUser from "../../hooks/useUser";
 
 const DashboardNavbar = ({ pageTitle }) => {
   const { user } = useAuth();
-  const [refetch, currentUser] = useUser();
+  const [, currentUser] = useUser();
   // console.log(currentUser[0]?.name);
   return (
     <div className="navbar min-h-24 bg-base-300 flex justify-between md:px-5">
