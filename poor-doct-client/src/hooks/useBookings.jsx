@@ -11,7 +11,7 @@ const useBookings = () => {
     queryKey: ["appointments", user?.email],
     queryFn: async () => {
       const res = await axiosPublic.get(
-        `http://localhost:5000/appointments?email=${user.email}`
+        `https://poor-doct-server.vercel.app/appointments?email=${user.email}`
       );
       return res.data;
     },
