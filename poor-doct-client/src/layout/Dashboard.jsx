@@ -1,5 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router";
+import Swal from "sweetalert2";
 import logo from "../assets/differentLogo.png";
+import useAuth from "../hooks/useAuth";
 import useDark from "../hooks/useDark";
 import useScroll from "../hooks/useScroll";
 import useUser from "../hooks/useUser";
@@ -8,14 +10,34 @@ const Dashboard = () => {
   const { scrollToTop } = useScroll();
   const { isDark, setIsDark } = useDark();
   const [, user] = useUser();
+  const { LogOutUser } = useAuth();
 
+  const handleLogOut = () => {
+    LogOutUser()
+      .then(() => {
+        Swal.fire({
+          title: "Log Out Successfully!",
+          icon: "success",
+          draggable: true,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+          draggable: true,
+          timer: 1500,
+        });
+      });
+  };
   // set role
   const role = user[0]?.role;
 
   return (
     <div>
       <div className="flex">
-        <div className="w-2/6 lg:w-1/6 bg-base-300 min-h-screen p-2">
+        <div className="w-2/6 lg:w-1/6 bg-base-300 min-h-screen p-2 relative">
           <Link to={"/"}>
             <img className="md:w-1/2 lg:w-[90%]" src={logo} alt="logo" />
           </Link>
@@ -133,13 +155,13 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"/dashboard/add-department"}
+                      to={"/dashboard/add-category"}
                       onClick={scrollToTop}
                       className={({ isActive }) =>
                         isActive ? "text-[#e12454] font-bold" : ""
                       }
                     >
-                      Add Department
+                      Add Category
                     </NavLink>
                   </li>
                 </ul>
@@ -264,6 +286,13 @@ const Dashboard = () => {
               </NavLink>
             </li>
           </ul>
+
+          <button
+            onClick={handleLogOut}
+            className="btn bg-[#e12454] text-white mt-4 w-full absolute bottom-0 left-0"
+          >
+            Logout
+          </button>
         </div>
 
         <div className="w-4/6 lg:w-5/6 ">
