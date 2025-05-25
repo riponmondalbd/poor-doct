@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
@@ -10,7 +9,7 @@ const SingleDoctor = ({ doctor }) => {
   return (
     <div>
       <Link to={`/doctors/${_id}`} onClick={scrollToTop}>
-        <img className="rounded-md" src={image} alt={name} />
+        <img className="rounded-md h-[286px]" src={image} alt={name} />
         <h2 className="text-center text-2xl font-semibold mt-6">{name}</h2>
         <h3 className="text-center font-medium text-[#65768a] py-2">
           {designation}
