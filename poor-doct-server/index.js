@@ -120,6 +120,41 @@ async function run() {
       res.send(result);
     });
 
+    // get appointment based on email
+    // app.get("/appointments", async (req, res) => {
+    //   const email = req.query.email;
+    //   const query = { applicant_email: email };
+    //   const result = await appointmentCollection.find(query).toArray();
+    //   res.send(result);
+    // });
+
+    app.get("/appointments", async (req, res) => {
+      const email = req.query.email;
+      const query = { applicant_email: email };
+      const result = await appointmentCollection.find(query).toArray();
+
+      for (const appoint of result) {
+        try {
+          const doctor = await doctorCollection.findOne({
+            _id: new ObjectId(appoint.doctor_id),
+          });
+          const category = await categoryCollection.findOne({
+            _id: new ObjectId(appoint.department_id),
+          });
+
+          if (doctor) {
+            appoint.doctorInfo = doctor;
+          }
+          if (category) {
+            appoint.categoryInfo = category;
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
