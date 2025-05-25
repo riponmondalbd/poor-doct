@@ -106,6 +106,13 @@ async function run() {
       res.send(result);
     });
 
+    // create a doctor
+    app.post("/doctor", async (req, res) => {
+      const doctor = req.body;
+      const result = await doctorCollection.insertOne(doctor);
+      res.send(result);
+    });
+
     // delete a doctor
     app.delete("/doctor/:id", async (req, res) => {
       const id = req.params.id;

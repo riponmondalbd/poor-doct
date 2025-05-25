@@ -111,7 +111,7 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"/dashboard/add-doctors"}
+                      to={"/dashboard/add-doctor"}
                       onClick={scrollToTop}
                       className={({ isActive }) =>
                         isActive ? "text-[#e12454] font-bold" : ""
@@ -133,13 +133,13 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"/dashboard/add-services"}
+                      to={"/dashboard/add-department"}
                       onClick={scrollToTop}
                       className={({ isActive }) =>
                         isActive ? "text-[#e12454] font-bold" : ""
                       }
                     >
-                      Add Services
+                      Add Department
                     </NavLink>
                   </li>
                 </ul>

@@ -33,11 +33,11 @@ const Profile = () => {
         image: res.data.data.display_url,
       };
 
-      const userRes = axiosPublic.patch(
+      const userRes = await axiosPublic.patch(
         `/user/${currentUser[0]?._id}`,
         updateItem
       );
-      refetch();
+      await refetch();
       console.log(userRes);
     }
     // console.log("with image url", res.data);
