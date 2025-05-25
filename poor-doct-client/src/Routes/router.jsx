@@ -3,11 +3,11 @@ import Dashboard from "../layout/Dashboard";
 import Root from "../layout/Root";
 import About from "../pages/About/About/About";
 import Contact from "../pages/Contact/Contact/Contact";
-import AddCategory from "../pages/Dashboard/AddCategory/AddCategory";
 import AddDoctor from "../pages/Dashboard/AddDoctor/AddDoctor";
 import AllDoctorAdmin from "../pages/Dashboard/AllDoctorAdmin/AllDoctorAdmin";
 import ChangeRole from "../pages/Dashboard/ChangeRole/ChangeRole";
 import Profile from "../pages/Dashboard/Profile/Profile";
+import Review from "../pages/Dashboard/Review/Review";
 import ShowAppointment from "../pages/Dashboard/ShowAppointment/ShowAppointment";
 import Department from "../pages/Department/Department/Department";
 import DepartmentDetails from "../pages/DepartmentDetails/DepartmentDetails";
@@ -95,8 +95,8 @@ const router = createBrowserRouter([
         element: <AddDoctor />,
       },
       {
-        path: "add-category",
-        element: <AddCategory />,
+        path: "reviews",
+        element: <Review />,
       },
     ],
   },

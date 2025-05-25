@@ -153,17 +153,6 @@ const Dashboard = () => {
                       Change Role
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink
-                      to={"/dashboard/add-category"}
-                      onClick={scrollToTop}
-                      className={({ isActive }) =>
-                        isActive ? "text-[#e12454] font-bold" : ""
-                      }
-                    >
-                      Add Category
-                    </NavLink>
-                  </li>
                 </ul>
               </div>
             ) : role === "Doctor" ? (
