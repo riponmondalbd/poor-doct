@@ -1,10 +1,9 @@
-import React from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useDoctors from "../../../hooks/useDoctors";
 import SingleDoctor from "../SingleDoctor/SingleDoctor";
 
 const AllDoctors = () => {
-  const [, doctors] = useDoctors();
+  const [, , doctors] = useDoctors();
   return (
     <div className="max-w-7xl mx-auto mb-24">
       <SectionTitle

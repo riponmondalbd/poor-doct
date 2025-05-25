@@ -9,7 +9,7 @@ import useDoctors from "../../../hooks/useDoctors";
 
 const Appointment = () => {
   const { user, loading } = useAuth();
-  const [isPending, doctors] = useDoctors();
+  const [isPending, , doctors] = useDoctors();
   const [, categories] = useCategory();
   const navigate = useNavigate();
   const location = useLocation();

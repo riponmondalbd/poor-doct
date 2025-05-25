@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router";
 import useDoctors from "../../../hooks/useDoctors";
 
 const DoctorDetailsPageDoctorDetails = () => {
-  const [isPending, doctors] = useDoctors();
+  const [isPending, , doctors] = useDoctors();
   const { id } = useParams();
 
   // loading spinner when load data from database

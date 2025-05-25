@@ -77,6 +77,14 @@ async function run() {
       const result = await userCollection.updateOne(filter, updatedDoc);
     });
 
+    // delete a user
+    app.delete("/doctor/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await doctorCollection.deleteOne(query);
+      res.send(result);
+    });
+
     // make role
     app.patch("/users/role/:id", async (req, res) => {
       const user = req.body;

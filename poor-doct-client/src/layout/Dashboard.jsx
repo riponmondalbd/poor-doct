@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import logo from "../assets/differentLogo.png";
 import useDark from "../hooks/useDark";
 import useScroll from "../hooks/useScroll";
@@ -16,7 +16,9 @@ const Dashboard = () => {
     <div>
       <div className="flex">
         <div className="w-2/6 lg:w-1/6 bg-base-300 min-h-screen p-2">
-          <img className="md:w-1/2 lg:w-[90%]" src={logo} alt="logo" />
+          <Link to={"/"}>
+            <img className="md:w-1/2 lg:w-[90%]" src={logo} alt="logo" />
+          </Link>
           {/* make dark mode or theme changer dark and white */}
           <label className="flex cursor-pointer gap-2 ml-6 mt-4">
             <svg
@@ -94,6 +96,17 @@ const Dashboard = () => {
                       }
                     >
                       Reviews
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={"/dashboard/all-doctors"}
+                      onClick={scrollToTop}
+                      className={({ isActive }) =>
+                        isActive ? "text-[#e12454] font-bold" : ""
+                      }
+                    >
+                      All Doctor
                     </NavLink>
                   </li>
                   <li>

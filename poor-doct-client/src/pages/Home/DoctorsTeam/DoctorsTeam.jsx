@@ -1,4 +1,3 @@
-import React from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -8,7 +7,7 @@ import useDoctors from "../../../hooks/useDoctors";
 import DoctorSectionDetails from "../../Shared/DoctorSectionDetails/DoctorSectionDetails";
 
 const DoctorsTeam = () => {
-  const [, doctors] = useDoctors();
+  const [, , doctors] = useDoctors();
 
   return (
     <div className="max-w-7xl mx-auto px-2 mb-24">

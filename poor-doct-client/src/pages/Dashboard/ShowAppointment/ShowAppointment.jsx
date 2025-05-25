@@ -9,10 +9,6 @@ const ShowAppointment = () => {
       <title>Poor Doct | Appointment</title>
       <DashboardNavbar pageTitle={"Appointment"} />
       <div className="p-5">
-        <h2 className="card-title text-2xl flex justify-center">
-          All Appointments
-        </h2>
-        <h2>{appointments.length}</h2>
         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
           <table className="table">
             {/* head */}
