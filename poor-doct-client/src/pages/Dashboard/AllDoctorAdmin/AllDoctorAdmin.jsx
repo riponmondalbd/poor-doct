@@ -1,13 +1,10 @@
-import { deleteUser } from "firebase/auth";
 import { TiDelete } from "react-icons/ti";
 import Swal from "sweetalert2";
 import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
-import useAuth from "../../../hooks/useAuth";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useDoctors from "../../../hooks/useDoctors";
 
 const AllDoctorAdmin = () => {
-  const { user } = useAuth();
   const [, refetch, doctors] = useDoctors();
   const axiosPublic = useAxiosPublic();
 
@@ -34,10 +31,6 @@ const AllDoctorAdmin = () => {
             timer: 1500,
           });
         }
-        // delete from firebase
-        deleteUser(user)
-          .then(() => {})
-          .catch();
       }
     });
   };

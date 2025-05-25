@@ -77,11 +77,11 @@ async function run() {
       const result = await userCollection.updateOne(filter, updatedDoc);
     });
 
-    // delete a user
-    app.delete("/doctor/:id", async (req, res) => {
+    // delete a doctor
+    app.delete("/user/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
-      const result = await doctorCollection.deleteOne(query);
+      const result = await userCollection.deleteOne(query);
       res.send(result);
     });
 
@@ -103,6 +103,14 @@ async function run() {
     // get all doctors
     app.get("/doctors", async (req, res) => {
       const result = await doctorCollection.find().toArray();
+      res.send(result);
+    });
+
+    // delete a doctor
+    app.delete("/doctor/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await doctorCollection.deleteOne(query);
       res.send(result);
     });
 
