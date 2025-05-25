@@ -5,6 +5,7 @@ import { LuPencilLine } from "react-icons/lu";
 import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useBookings from "../../../hooks/useBookings";
 import useUser from "../../../hooks/useUser";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -15,6 +16,7 @@ const Profile = () => {
   const { user } = useAuth();
   const axiosPublic = useAxiosPublic();
   const [refetch, currentUser] = useUser();
+  const [appointments] = useBookings();
 
   // console.log(currentUser[0]);
 
@@ -87,7 +89,7 @@ const Profile = () => {
               </p>
               <p className="flex items-center text-[18px] gap-2">
                 <FaRegCalendarAlt />
-                Bookings:
+                Bookings: {appointments.length}
               </p>
             </div>
           </div>

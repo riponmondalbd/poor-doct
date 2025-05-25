@@ -1,23 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import DashboardNavbar from "../../../components/DashboardNavbar/DashboardNavbar";
-import useAuth from "../../../hooks/useAuth";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useBookings from "../../../hooks/useBookings";
 
 const ShowAppointment = () => {
-  const { user } = useAuth();
-  const axiosPublic = useAxiosPublic();
-  // console.log(user);
-
-  const { data: appointments = [] } = useQuery({
-    queryKey: ["appointments", user?.email],
-    queryFn: async () => {
-      const res = await axiosPublic.get(
-        `http://localhost:5000/appointments?email=${user.email}`
-      );
-      return res.data;
-    },
-  });
-  console.log(appointments);
+  const [appointments] = useBookings();
 
   return (
     <div>
@@ -34,7 +19,8 @@ const ShowAppointment = () => {
             <thead>
               <tr>
                 <th></th>
-                <th>Name</th>
+                <th>Doctor Name</th>
+                <th>Category</th>
                 <th>Date</th>
                 <th>Time</th>
               </tr>
@@ -43,7 +29,8 @@ const ShowAppointment = () => {
               {appointments.map((appointment, idx) => (
                 <tr key={appointment._id}>
                   <th>{idx + 1}</th>
-                  <td>{appointment.applicant_name}</td>
+                  <td>{appointment.doctorInfo.name}</td>
+                  <td>{appointment.categoryInfo.category_name}</td>
                   <td>{appointment.date}</td>
                   <td>{appointment.time}</td>
                 </tr>

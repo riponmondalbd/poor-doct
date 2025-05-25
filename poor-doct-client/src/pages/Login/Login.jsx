@@ -75,7 +75,7 @@ const Login = () => {
               // login user
               loginInUser(values.email, values.password)
                 .then((result) => {
-                  console.log(result.user);
+                  // console.log(result.user);
                   if (result.user) {
                     Swal.fire({
                       title: `Hi ${
